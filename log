@@ -870,3 +870,58 @@ treemap.c:92:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 b66b5bc
+Fri Apr 22 20:49:19 UTC 2022: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:18: error: ‘key2’ undeclared (first use in this function); did you mean ‘key_t’?
+       tree->root=key2;
+                  ^~~~
+                  key_t
+treemap.c:41:18: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:42:24: error: ‘key1’ undeclared (first use in this function); did you mean ‘key2’?
+       tree->root->left=key1;
+                        ^~~~
+                        key2
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:80:11: error: comparison of distinct pointer types lacks a cast [-Werror]
+     if(key<tree->current->pair)
+           ^
+treemap.c:82:23: error: ‘TreeMap {aka struct TreeMap}’ has no member named ‘left’
+         bsearch(&(tree->left), key);
+                       ^~
+treemap.c:82:9: error: too few arguments to function ‘bsearch’
+         bsearch(&(tree->left), key);
+         ^~~~~~~
+In file included from test.c:2:0:
+/usr/include/stdlib.h:817:14: note: declared here
+ extern void *bsearch (const void *__key, const void *__base,
+              ^~~~~~~
+In file included from test.c:4:0:
+treemap.c:84:23: error: ‘TreeMap {aka struct TreeMap}’ has no member named ‘pair’
+     else if(key > tree->pair)
+                       ^~
+treemap.c:86:23: error: ‘TreeMap {aka struct TreeMap}’ has no member named ‘right’
+         bsearch(&(tree->right), key);
+                       ^~
+treemap.c:86:9: error: too few arguments to function ‘bsearch’
+         bsearch(&(tree->right), key);
+         ^~~~~~~
+In file included from test.c:2:0:
+/usr/include/stdlib.h:817:14: note: declared here
+ extern void *bsearch (const void *__key, const void *__base,
+              ^~~~~~~
+In file included from test.c:4:0:
+treemap.c:88:24: error: ‘TreeMap {aka struct TreeMap}’ has no member named ‘pair’
+     else if(key == tree->pair)
+                        ^~
+treemap.c:90:16: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+         return tree;
+                ^~~~
+treemap.c:92:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+7f7d464

@@ -38,7 +38,7 @@ TreeNode * createTreeNode(void* key, void * value) {
 
 TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
     TreeMap *tree=(TreeMap *)malloc(sizeof(TreeMap));
-      tree->root=10;
+      tree->root=key2;
       tree->root->left=key1;
     return tree;
     //new->lower_than = lower_than;
@@ -79,11 +79,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
     if(key<tree->current->pair)
     {
-        search(&(tree->left), key);
+        bsearch(&(tree->left), key);
     }
     else if(key > tree->pair)
     {
-        search(&(tree->right), key);
+        bsearch(&(tree->right), key);
     }
     else if(key == tree->pair)
     {
