@@ -701,3 +701,26 @@ treemap.c:92:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 9fa1988
+Fri Apr 22 20:27:10 UTC 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:17: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+       tree->root=10;
+                 ^
+treemap.c:42:24: error: ‘key1’ undeclared (first use in this function); did you mean ‘key_t’?
+       tree->root->left=key1;
+                        ^~~~
+                        key_t
+treemap.c:42:24: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c: In function ‘firstTreeMap’:
+treemap.c:91:5: error: ‘return’ with no value, in function returning non-void [-Werror]
+     return;
+     ^~~~~~
+treemap.c:83:8: note: declared here
+ Pair * firstTreeMap(TreeMap * tree) {
+        ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+f83c1ed
