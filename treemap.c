@@ -85,7 +85,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     {
         bsearch(&(tree->right), key);
     }
-    else if(key == tree->current->pai)
+    else if(key == tree->current->pair)
     {
         return tree;
     }
