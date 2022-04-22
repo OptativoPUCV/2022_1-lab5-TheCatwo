@@ -1085,3 +1085,39 @@ treemap.c:92:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 c5f2cf4
+Fri Apr 22 20:50:36 UTC 2022: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:18: error: ‘key2’ undeclared (first use in this function); did you mean ‘key_t’?
+       tree->root=key2;
+                  ^~~~
+                  key_t
+treemap.c:41:18: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:42:24: error: ‘key1’ undeclared (first use in this function); did you mean ‘key2’?
+       tree->root->left=key1;
+                        ^~~~
+                        key2
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:80:11: error: comparison of distinct pointer types lacks a cast [-Werror]
+     if(key<tree->current->pair)
+           ^
+treemap.c:82:29: error: ‘TreeMap {aka struct TreeMap}’ has no member named ‘left’
+         searchTreeMap(&(tree->left), key);
+                             ^~
+treemap.c:84:17: error: comparison of distinct pointer types lacks a cast [-Werror]
+     else if(key > tree->current->pair)
+                 ^
+treemap.c:86:29: error: ‘TreeMap {aka struct TreeMap}’ has no member named ‘right’
+         searchTreeMap(&(tree->right), key);
+                             ^~
+treemap.c:90:16: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+         return tree;
+                ^~~~
+treemap.c:92:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+13587e4

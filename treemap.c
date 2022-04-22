@@ -79,11 +79,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
     if(key<tree->current->pair)
     {
-        bsearch(&(tree->left), key);
+        searchTreeMap(&(tree->left), key);
     }
     else if(key > tree->current->pair)
     {
-        bsearch(&(tree->right), key);
+        searchTreeMap(&(tree->right), key);
     }
     else if(key == tree->current->pair)
     {
