@@ -502,3 +502,15 @@ treemap.c:42:24: error: ‘key1’ undeclared (first use in this function); did 
                         key2
 Compilation failed
 a4fb1a7
+Fri Apr 22 19:22:13 UTC 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:18: error: ‘key1’ undeclared (first use in this function); did you mean ‘key_t’?
+       tree->root=key1;
+                  ^~~~
+                  key_t
+treemap.c:41:18: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+c25fbe5
