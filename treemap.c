@@ -77,15 +77,15 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
         return NULL;
     }
 
-    if(key<tree->pair)
+    if(key<tree->current->pair)
     {
         search(&(tree->left), key);
     }
-    else if(kry > tree->pair)
+    else if(key > tree->pair)
     {
-        search(&(tree->right), kry);
+        search(&(tree->right), key);
     }
-    else if(kry == tree->pair)
+    else if(key == tree->pair)
     {
         return tree;
     }
