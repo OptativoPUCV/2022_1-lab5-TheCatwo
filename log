@@ -678,3 +678,26 @@ treemap.c:91:12: error: return from incompatible pointer type [-Werror=incompati
 cc1: all warnings being treated as errors
 Compilation failed
 7ba47a9
+Fri Apr 22 20:26:53 UTC 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:17: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+       tree->root=10;
+                 ^
+treemap.c:42:24: error: ‘key1’ undeclared (first use in this function); did you mean ‘key_t’?
+       tree->root->left=key1;
+                        ^~~~
+                        key_t
+treemap.c:42:24: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c: In function ‘firstTreeMap’:
+treemap.c:91:12: error: incompatible types when returning type ‘TreeNode {aka struct TreeNode}’ but ‘Pair * {aka struct Pair *}’ was expected
+     return *aux;
+            ^~~~
+treemap.c:92:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+9fa1988
