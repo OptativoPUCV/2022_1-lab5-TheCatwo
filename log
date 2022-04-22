@@ -329,3 +329,25 @@ treemap.c:45:12: error: return from incompatible pointer type [-Werror=incompati
 cc1: all warnings being treated as errors
 Compilation failed
 5e06830
+Fri Apr 22 18:42:43 UTC 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:43:8: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘data’
+     tre->data = val;
+        ^~
+treemap.c:43:17: error: ‘val’ undeclared (first use in this function)
+     tre->data = val;
+                 ^~~
+treemap.c:43:17: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:44:6: error: ‘tree’ undeclared (first use in this function); did you mean ‘tre’?
+     *tree= tre;
+      ^~~~
+      tre
+treemap.c:47:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+09f386b
