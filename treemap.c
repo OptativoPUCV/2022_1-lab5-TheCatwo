@@ -81,7 +81,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    TreeNode *aux;
+    TreeMap *aux;
     aux=tree->root;
     do{
       aux=aux->left;
