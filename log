@@ -546,3 +546,41 @@ treemap.c:42:24: note: each undeclared identifier is reported only once for each
 cc1: all warnings being treated as errors
 Compilation failed
 cf50ac1
+Fri Apr 22 20:24:37 UTC 2022: 
+ treemap.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:17: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+       tree->root=10;
+                 ^
+treemap.c:42:24: error: ‘key1’ undeclared (first use in this function); did you mean ‘key_t’?
+       tree->root->left=key1;
+                        ^~~~
+                        key_t
+treemap.c:42:24: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c: In function ‘firstTreeMap’:
+treemap.c:85:8: error: incompatible types when assigning to type ‘TreeMap {aka struct TreeMap}’ from type ‘TreeNode * {aka struct TreeNode *}’
+     aux=tree->root;
+        ^
+treemap.c:87:14: error: invalid type argument of ‘->’ (have ‘TreeMap {aka struct TreeMap}’)
+       aux=aux->left;
+              ^~
+treemap.c:88:11: error: used struct type value where scalar is required
+       if (aux)
+           ^~~
+treemap.c:89:22: error: incompatible types when assigning to type ‘TreeNode * {aka struct TreeNode *}’ from type ‘TreeMap {aka struct TreeMap}’
+         tree->current=aux;
+                      ^
+treemap.c:90:13: error: used struct type value where scalar is required
+     }while (aux)
+             ^~~
+treemap.c:91:5: error: expected ‘;’ before ‘return’
+     return NULL;
+     ^~~~~~
+treemap.c:92:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+ecd85d5

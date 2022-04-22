@@ -81,6 +81,13 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
+    TreeMap aux;
+    aux=tree->root;
+    do{
+      aux=aux->left;
+      if (aux)
+        tree->current=aux;
+    }while (aux)
     return NULL;
 }
 
