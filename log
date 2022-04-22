@@ -24,3 +24,26 @@ treemap.c:41:12: error: unused variable ‘pair’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 44502ef
+Fri Apr 22 17:57:04 UTC 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:43:22: error: ‘key1’ undeclared (first use in this function); did you mean ‘key_t’?
+     new->pair->key = key1;
+                      ^~~~
+                      key_t
+treemap.c:43:22: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:44:24: error: ‘value’ undeclared (first use in this function); did you mean ‘valloc’?
+     new->pair->value = value;
+                        ^~~~~
+                        valloc
+treemap.c:46:12: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+     return new;
+            ^~~
+treemap.c:41:12: error: unused variable ‘pair’ [-Werror=unused-variable]
+     Pair * pair = (Pair*) malloc (sizeof(Pair));
+            ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b739bc2
