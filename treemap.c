@@ -40,7 +40,7 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
     TreeNode * new = (TreeNode *)malloc(sizeof(TreeNode));
     Pair * pair = (Pair*) malloc (sizeof(Pair));
     if (new == NULL) return NULL;
-    new->pair->key = key1;
+    new->pair->key = key_t;
     new->pair->value = value;
     new->parent = new->left = new->right = NULL;
     return new;
