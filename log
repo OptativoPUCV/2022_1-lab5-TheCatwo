@@ -392,3 +392,16 @@ treemap.c:43:12: error: return from incompatible pointer type [-Werror=incompati
 cc1: all warnings being treated as errors
 Compilation failed
 846ed56
+Fri Apr 22 18:44:05 UTC 2022: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:42:8: error: ‘TreeMap {aka struct TreeMap}’ has no member named ‘left’
+     tre->left= tre->right= NULL;
+        ^~
+treemap.c:42:19: error: ‘TreeMap {aka struct TreeMap}’ has no member named ‘right’
+     tre->left= tre->right= NULL;
+                   ^~
+Compilation failed
+a0f4c98
