@@ -411,3 +411,30 @@ Fri Apr 22 19:15:48 UTC 2022:
  tests:  3|8
 total_score: 0/70
 1d14cce
+Fri Apr 22 19:20:23 UTC 2022: 
+ treemap.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:21: error: ‘map’ undeclared (first use in this function)
+     int resultado = map->lower_than(key1,key2);
+                     ^~~
+treemap.c:41:21: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:41:37: error: ‘key1’ undeclared (first use in this function); did you mean ‘key_t’?
+     int resultado = map->lower_than(key1,key2);
+                                     ^~~~
+                                     key_t
+treemap.c:41:42: error: ‘key2’ undeclared (first use in this function); did you mean ‘key1’?
+     int resultado = map->lower_than(key1,key2);
+                                          ^~~~
+                                          key1
+treemap.c:42:9: error: ‘resutado’ undeclared (first use in this function); did you mean ‘resultado’?
+     if (resutado==1){
+         ^~~~~~~~
+         resultado
+treemap.c:41:9: error: unused variable ‘resultado’ [-Werror=unused-variable]
+     int resultado = map->lower_than(key1,key2);
+         ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d1bcdee
