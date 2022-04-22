@@ -530,3 +530,19 @@ treemap.c:42:24: note: each undeclared identifier is reported only once for each
 cc1: all warnings being treated as errors
 Compilation failed
 67332f3
+Fri Apr 22 19:22:56 UTC 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:17: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+       tree->root=10;
+                 ^
+treemap.c:42:24: error: ‘key1’ undeclared (first use in this function); did you mean ‘key_t’?
+       tree->root->left=key1;
+                        ^~~~
+                        key_t
+treemap.c:42:24: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+cf50ac1
