@@ -88,7 +88,7 @@ Pair * firstTreeMap(TreeMap * tree) {
       if (aux)
         tree->current=aux;
     }while (aux);
-    return NULL;
+    return tree->current;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
