@@ -367,3 +367,17 @@ treemap.c:46:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 440c53d
+Fri Apr 22 18:43:18 UTC 2022: 
+ treemap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:43:12: error: incompatible types when returning type ‘TreeNode {aka struct TreeNode}’ but ‘TreeMap * {aka struct TreeMap *}’ was expected
+     return *tre;
+            ^~~~
+treemap.c:45:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+a879322
