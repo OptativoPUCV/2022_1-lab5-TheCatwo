@@ -2,3 +2,25 @@ Fri Apr 22 17:53:13 UTC 2022:
  tests:  1|8
 total_score: 0/70
 ebc1a9e
+Fri Apr 22 17:56:47 UTC 2022: 
+ treemap.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:43:22: error: ‘key’ undeclared (first use in this function)
+     new->pair->key = key;
+                      ^~~
+treemap.c:43:22: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:44:24: error: ‘value’ undeclared (first use in this function); did you mean ‘valloc’?
+     new->pair->value = value;
+                        ^~~~~
+                        valloc
+treemap.c:46:12: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+     return new;
+            ^~~
+treemap.c:41:12: error: unused variable ‘pair’ [-Werror=unused-variable]
+     Pair * pair = (Pair*) malloc (sizeof(Pair));
+            ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+44502ef
