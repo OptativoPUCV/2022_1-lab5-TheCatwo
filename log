@@ -156,3 +156,80 @@ treemap.c:68:24: error: invalid type argument of ‘->’ (have ‘TreeMap {aka 
 cc1: all warnings being treated as errors
 Compilation failed
 ff2e626
+Fri Apr 22 18:40:50 UTC 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:15: error: ‘node’ undeclared (first use in this function)
+         tre= (node *)malloc(sizeof(node));
+               ^~~~
+treemap.c:41:15: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:41:21: error: expected expression before ‘)’ token
+         tre= (node *)malloc(sizeof(node));
+                     ^
+treemap.c:43:12: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘data’
+         tre->data = val;
+            ^~
+treemap.c:43:21: error: ‘val’ undeclared (first use in this function)
+         tre->data = val;
+                     ^~~
+treemap.c:44:10: error: ‘tree’ undeclared (first use in this function); did you mean ‘tre’?
+         *tree= tre;
+          ^~~~
+          tre
+treemap.c:45:9: error: ‘return’ with no value, in function returning non-void [-Werror]
+         return;
+         ^~~~~~
+treemap.c:39:11: note: declared here
+ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
+           ^~~~~~~~~~~~~
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:52:5: error: unknown type name ‘node’; did you mean ‘mode_t’?
+     node *tre = NULL;
+     ^~~~
+     mode_t
+treemap.c:53:8: error: wrong type argument to unary exclamation mark
+     if(!(*tree))
+        ^
+treemap.c:55:15: error: ‘node’ undeclared (first use in this function)
+         tre= (node *)malloc(sizeof(node));
+               ^~~~
+treemap.c:55:21: error: expected expression before ‘)’ token
+         tre= (node *)malloc(sizeof(node));
+                     ^
+treemap.c:56:12: error: request for member ‘left’ in something not a structure or union
+         tre->left= tre->right= NULL;
+            ^~
+treemap.c:56:23: error: request for member ‘right’ in something not a structure or union
+         tre->left= tre->right= NULL;
+                       ^~
+treemap.c:57:12: error: request for member ‘data’ in something not a structure or union
+         tre->data = val;
+            ^~
+treemap.c:57:21: error: ‘val’ undeclared (first use in this function); did you mean ‘value’?
+         tre->data = val;
+                     ^~~
+                     value
+treemap.c:58:14: error: incompatible types when assigning to type ‘TreeMap {aka struct TreeMap}’ from type ‘int *’
+         *tree= tre;
+              ^
+treemap.c:62:21: error: invalid type argument of ‘->’ (have ‘TreeMap {aka struct TreeMap}’)
+     if(val < (*tree)->data)
+                     ^~
+treemap.c:64:9: error: implicit declaration of function ‘insert’; did you mean ‘index’? [-Werror=implicit-function-declaration]
+         insert(&(*tree)->left, val);
+         ^~~~~~
+         index
+treemap.c:64:24: error: invalid type argument of ‘->’ (have ‘TreeMap {aka struct TreeMap}’)
+         insert(&(*tree)->left, val);
+                        ^~
+treemap.c:66:26: error: invalid type argument of ‘->’ (have ‘TreeMap {aka struct TreeMap}’)
+     else if(val > (*tree)->data)
+                          ^~
+treemap.c:68:24: error: invalid type argument of ‘->’ (have ‘TreeMap {aka struct TreeMap}’)
+         insert(&(*tree)->right, val);
+                        ^~
+cc1: all warnings being treated as errors
+Compilation failed
+b16c5d2
