@@ -38,15 +38,8 @@ TreeNode * createTreeNode(void* key, void * value) {
 
 TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
     TreeMap *tree=(TreeMap *)malloc(sizeof(TreeMap));
-    int resultado = tree->lower_than(key1,key2);
-    if (resutado==1){
-      tree->root=key1;
+      tree->root=key2;
       tree->root->left=key1;
-    }
-    else{
-      tree->root=key1;
-      tree->root->left=key2;
-    }
     return tree;
     //new->lower_than = lower_than;
 }
