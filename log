@@ -1440,3 +1440,56 @@ treemap.c:165:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 775e2db
+Sat Apr 23 15:25:51 UTC 2022: 
+ treemap.c | 26 ++++++++++++--------------
+ 1 file changed, 12 insertions(+), 14 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:52:27: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+     if (is_equal(tree, aux->key, key)== 1)
+                           ^~
+treemap.c:56:29: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+     if (tree->lower_than(aux->key, key)== 1) {
+                             ^~
+treemap.c: In function ‘removeNode’:
+treemap.c:86:13: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+         node->key = aux->key;
+             ^~
+treemap.c:86:24: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+         node->key = aux->key;
+                        ^~
+treemap.c:87:13: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+         node->value = aux->value;
+             ^~
+treemap.c:87:26: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+         node->value = aux->value;
+                          ^~
+treemap.c:96:21: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+           tree->root->key = node->key;
+                     ^~
+treemap.c:96:33: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+           tree->root->key = node->key;
+                                 ^~
+treemap.c:97:21: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+           tree->root->value = node->value;
+                     ^~
+treemap.c:97:35: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+           tree->root->value = node->value;
+                                   ^~
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:151:25: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+     if(is_equal(tree,aux->key,key)==1){
+                         ^~
+treemap.c:153:17: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+       return aux->value;
+                 ^~
+treemap.c:155:30: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+     flag=tree->lower_than(aux->key,key);
+                              ^~
+treemap.c:157:7: error: ‘auxl’ undeclared (first use in this function); did you mean ‘aux’?
+       auxl=aux->right;
+       ^~~~
+       aux
+treemap.c:157:7: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+d72f4f9
