@@ -1933,3 +1933,25 @@ Sat Apr 23 17:23:45 UTC 2022:
  tests:  18|3
 total_score: 35/70
 013a25d
+Sat Apr 23 17:27:45 UTC 2022: 
+ treemap.c | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:64:15: error: ‘parent’ undeclared (first use in this function); did you mean ‘putenv’?
+   new->parent=parent;
+               ^~~~~~
+               putenv
+treemap.c:64:15: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:68:30: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+       if(tree->lower_than(new->key,parent->key)){
+                              ^~
+treemap.c: At top level:
+treemap.c:83:12: error: redefinition of ‘minimum’
+ TreeNode * minimum(TreeNode* x){
+            ^~~~~~~
+treemap.c:76:12: note: previous definition of ‘minimum’ was here
+ TreeNode * minimum(TreeNode * x){
+            ^~~~~~~
+Compilation failed
+6c4204d
