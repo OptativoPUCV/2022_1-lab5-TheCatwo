@@ -203,21 +203,22 @@ Pair * nextTreeMap(TreeMap * tree) {
   if(tree->current->right!=NULL){
     aux=minimum(tree->current->right);
     tree->current=aux;
-  return aux->pair->value;
+    return aux->pair->value;
   }else{
     int ban=0;
     aux=tree->current->parent;
-  while(aux!=NULL){
-    if(tree->lower_than(tree->current->pair->key,aux->pair->key)==1){
-      ban=1;
-      break;
+    while(aux!=NULL){
+      if(tree->lower_than(tree->current->pair->key,aux->pair->key)==1){
+        ban=1;
+        break;
+      }
+      aux=aux->parent;
     }
-    aux=aux->parent;
-  }
-  if(ban==0)
-    return NULL;
-  tree->current=aux;
-  return aux->pair->value;
-  }
+    if(ban==0)
+      return NULL;
+    tree->current=aux;
+    printf("%d", *(int*) aux->pair->key);
+    return aux->pair->value;
+    }
   return NULL;
 }
