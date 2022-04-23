@@ -1797,3 +1797,13 @@ Sat Apr 23 16:49:11 UTC 2022:
  tests:  11|4
 total_score: 25/70
 182861f
+Sat Apr 23 16:52:01 UTC 2022: 
+ treemap.c | 24 ++++++++++++++++++++++--
+ 1 file changed, 22 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘upperBound’:
+treemap.c:178:24: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+ if(tree->lower_than(rec->key,key)==1){
+                        ^~
+Compilation failed
+216170f

@@ -164,7 +164,28 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    return NULL;
+    TreeNode* aux_ub=tree->root;
+TreeNode* rec=tree->root;//variable recorrer
+int ban=0;
+while(rec!=NULL){
+if(is_equal(tree,rec->pair->key,key)){
+return rec->pair->value;
+}
+if(tree->lower_than(key,rec->pair->key)==1){
+aux_ub=rec;
+ban=1;
+}
+if(tree->lower_than(rec->key,key)==1){
+rec=rec->right;
+}else{
+rec=rec->left;
+}
+}
+if(ban==1){
+return aux_ub->pair->value;
+}else{
+return NULL;
+}
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
@@ -180,25 +201,24 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
   TreeNode* aux;
-if(tree->current->right!=NULL){
-aux=minimum(tree->current->right);
-tree->current=aux;
-return aux->pair->value;
-}else{
-int ban=0;
-aux=tree->current->parent;
-while(aux!=NULL){
-if(tree->lower_than(tree->current->pair->key,aux->pair->key)==1){
-ban=1;
-break;
-}
-aux=aux->parent;
-}
-if(ban==0){
-return NULL;
-}
-tree->current=aux;
-return aux->pair->value;
-}
-return NULL;
+  if(tree->current->right!=NULL){
+    aux=minimum(tree->current->right);
+    tree->current=aux;
+  return aux->pair->value;
+  }else{
+    int ban=0;
+    aux=tree->current->parent;
+  while(aux!=NULL){
+    if(tree->lower_than(tree->current->pair->key,aux->pair->key)==1){
+      ban=1;
+      break;
+    }
+    aux=aux->parent;
+  }
+  if(ban==0)
+    return NULL;
+  tree->current=aux;
+  return aux->pair->value;
+  }
+  return NULL;
 }
