@@ -1742,3 +1742,18 @@ Sat Apr 23 16:43:35 UTC 2022:
  tests:  11|4
 total_score: 25/70
 2b3bb4c
+Sat Apr 23 16:45:29 UTC 2022: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:57:16: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘current’; did you mean ‘parent’?
+       aux=aux->current->right;
+                ^~~~~~~
+                parent
+treemap.c:60:16: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘current’; did you mean ‘parent’?
+       aux=aux->current->left;
+                ^~~~~~~
+                parent
+Compilation failed
+e440fbf
