@@ -60,16 +60,17 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       aux=aux->left;
     }
   }while(aux);
+  createTreeNode(key, value);
   aux->pair->key=key;
   aux->pair->value=value;
 }
+
 TreeNode * minimum(TreeNode* x){
   while (x->left != NULL) {
     x = x -> left;
   }
   return x;
 }
-
 
 void removeNode(TreeMap * tree, TreeNode* node){
   if (node->left == NULL && node->right == NULL){
