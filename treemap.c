@@ -180,7 +180,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
   int ban=0;
   while(rec!=NULL){
     if(is_equal(tree,rec->pair->key,key)){
-    return rec->pair->value;
+    return rec->pair;
     }
     if(tree->lower_than(key,rec->pair->key)==1){
       aux_ub=rec;
@@ -193,7 +193,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }
   }
   if(ban==1){
-    return aux_ub->pair->value;
+    return aux_ub->pair;
   }else{
     return NULL;
   }
@@ -214,21 +214,21 @@ Pair * nextTreeMap(TreeMap * tree) {
   TreeNode *aux;
   int flag= 0;
   if (tree->current->right==NULL) {
-    aux = tree->current->parent;
+    aux= tree->current->parent;
     while (aux != NULL) {
       if (tree->lower_than(tree->current->pair->key, aux->pair->key) == 1) {
-      flag = 1;
+      flag= 1;
       break;
       }
-      aux = aux->parent;
+      aux= aux->parent;
     }
     if (flag==0) 
       return NULL;
-    tree->current = aux;
+    tree->current= aux;
     return aux->pair;
   }else {
     aux = minimum(tree->current->right);
-    tree->current = aux;
+    tree->current= aux;
     return aux->pair;
   }
 }
