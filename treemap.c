@@ -74,12 +74,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       tree->current=new;
     }
 }
-TreeNode * minimum(TreeNode * x){
-while(x->left!=NULL){
-x=x->left;
-}
-return x;
-}
 
 TreeNode * minimum(TreeNode* x){
   while (x->left != NULL) {
