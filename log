@@ -1541,3 +1541,41 @@ treemap.c:154:25: error: ‘TreeNode {aka struct TreeNode}’ has no member name
                          ^~
 Compilation failed
 df12c61
+Sat Apr 23 15:26:48 UTC 2022: 
+ treemap.c | 14 --------------
+ 1 file changed, 14 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:52:27: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+     if (is_equal(tree, aux->key, key)== 1)
+                           ^~
+treemap.c:56:29: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+     if (tree->lower_than(aux->key, key)== 1) {
+                             ^~
+treemap.c: In function ‘removeNode’:
+treemap.c:86:13: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+         node->key = aux->key;
+             ^~
+treemap.c:86:24: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+         node->key = aux->key;
+                        ^~
+treemap.c:87:13: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+         node->value = aux->value;
+             ^~
+treemap.c:87:26: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+         node->value = aux->value;
+                          ^~
+treemap.c:96:21: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+           tree->root->key = node->key;
+                     ^~
+treemap.c:96:33: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+           tree->root->key = node->key;
+                                 ^~
+treemap.c:97:21: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+           tree->root->value = node->value;
+                     ^~
+treemap.c:97:35: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+           tree->root->value = node->value;
+                                   ^~
+Compilation failed
+49be9dd
