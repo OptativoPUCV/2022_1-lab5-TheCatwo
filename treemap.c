@@ -188,7 +188,7 @@ return aux->pair->value;
 int ban=0;
 aux=tree->current->parent;
 while(aux!=NULL){
-if(tree->lower_than(tree->current->key,aux->pair->key)==1){
+if(tree->lower_than(tree->current->pair->key,aux->pair->key)==1){
 ban=1;
 break;
 }
@@ -198,7 +198,7 @@ if(ban==0){
 return NULL;
 }
 tree->current=aux;
-return aux->value;
+return aux->pair->value;
 }
 return NULL;
 }
