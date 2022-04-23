@@ -149,7 +149,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
   while(actual!=NULL){
     if(is_equal(tree,actual->pair->key,key)==1){
       tree->current=actual;
-      return actual->pair->value;
+      return actual->pair;
     }
     flag=tree->lower_than(actual->pair->key,key);
     if(flag==1){
