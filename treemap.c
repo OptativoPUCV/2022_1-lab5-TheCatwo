@@ -175,7 +175,7 @@ Pair * firstTreeMap(TreeMap * tree) {
       if (aux)
         tree->current=aux;
     }while (aux);
-    return aux->pair->key;
+    return tree->current->pair->key;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
