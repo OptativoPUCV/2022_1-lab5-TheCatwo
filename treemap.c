@@ -177,14 +177,14 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 Pair * upperBound(TreeMap * tree, void* key) {
   TreeNode* aux_ub=tree->root;
   TreeNode* rec=tree->root;//variable recorrer
-  int ban=0;
+  int flag=0;
   while(rec!=NULL){
     if(is_equal(tree,rec->pair->key,key)){
     return rec->pair;
     }
     if(tree->lower_than(key,rec->pair->key)==1){
       aux_ub=rec;
-      ban=1;
+      flag=1;
     }
     if(tree->lower_than(rec->pair->key,key)==1){
       rec=rec->right;
@@ -192,7 +192,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       rec=rec->left;
     }
   }
-  if(ban==1){
+  if(flag==1){
     return aux_ub->pair;
   }else{
     return NULL;
