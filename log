@@ -1955,3 +1955,23 @@ treemap.c:76:12: note: previous definition of ‘minimum’ was here
             ^~~~~~~
 Compilation failed
 6c4204d
+Sat Apr 23 17:29:57 UTC 2022: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:0:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:69:30: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+       if(tree->lower_than(new->key,parent->key)){
+                              ^~
+treemap.c:69:42: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+       if(tree->lower_than(new->key,parent->key)){
+                                          ^~
+treemap.c: At top level:
+treemap.c:84:12: error: redefinition of ‘minimum’
+ TreeNode * minimum(TreeNode* x){
+            ^~~~~~~
+treemap.c:77:12: note: previous definition of ‘minimum’ was here
+ TreeNode * minimum(TreeNode * x){
+            ^~~~~~~
+Compilation failed
+ab66e0a
