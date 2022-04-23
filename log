@@ -1993,3 +1993,14 @@ Sat Apr 23 17:30:46 UTC 2022:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 c54116e
+Sat Apr 23 17:33:09 UTC 2022: 
+ treemap.c | 13 +------------
+ 1 file changed, 1 insertion(+), 12 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:51:13: error: unused variable ‘parent’ [-Werror=unused-variable]
+   TreeNode *parent=NULL;
+             ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+45c6acb

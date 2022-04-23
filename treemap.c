@@ -61,18 +61,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       aux=aux->left;
     }
   }while(aux);
-  TreeNode *new= createTreeNode(key, value);
-  new->parent=parent;
-    if(parent==NULL){
-      tree->root=new;
-    }else{
-      if(tree->lower_than(new->pair->key,parent->pair->key)){
-        parent->left=new;
-      }else{
-        parent->right=new;
-      }
-      tree->current=new;
-    }
+  
 }
 
 TreeNode * minimum(TreeNode* x){
@@ -192,9 +181,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }
   }
   if(ban==1){
-  return aux_ub->pair->value;
+    return aux_ub->pair->value;
   }else{
-  return NULL;
+    return NULL;
   }
 }
 
