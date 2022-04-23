@@ -1376,3 +1376,67 @@ treemap.c:106:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 ac59532
+Sat Apr 23 15:22:17 UTC 2022: 
+ treemap.c | 61 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 60 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:52:27: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+     if (is_equal(tree, aux->key, key)== 1)
+                           ^~
+treemap.c:56:29: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+     if (tree->lower_than(aux->key, key)== 1) {
+                             ^~
+treemap.c: In function ‘removeNode’:
+treemap.c:86:13: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+         node->key = aux->key;
+             ^~
+treemap.c:86:24: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+         node->key = aux->key;
+                        ^~
+treemap.c:87:13: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+         node->value = aux->value;
+             ^~
+treemap.c:87:26: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+         node->value = aux->value;
+                          ^~
+treemap.c:96:21: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+           tree->root->key = node->key;
+                     ^~
+treemap.c:96:33: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘key’
+           tree->root->key = node->key;
+                                 ^~
+treemap.c:97:21: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+           tree->root->value = node->value;
+                     ^~
+treemap.c:97:35: error: ‘TreeNode {aka struct TreeNode}’ has no member named ‘value’
+           tree->root->value = node->value;
+                                   ^~
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:153:11: error: comparison of distinct pointer types lacks a cast [-Werror]
+     if(key<tree->current->pair)
+           ^
+treemap.c:155:23: error: passing argument 1 of ‘searchTreeMap’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+         searchTreeMap(tree->current->left, key);
+                       ^~~~
+treemap.c:147:8: note: expected ‘TreeMap * {aka struct TreeMap *}’ but argument is of type ‘TreeNode * {aka struct TreeNode *}’
+ Pair * searchTreeMap(TreeMap * tree, void* key) {
+        ^~~~~~~~~~~~~
+treemap.c:157:17: error: comparison of distinct pointer types lacks a cast [-Werror]
+     else if(key > tree->current->pair)
+                 ^
+treemap.c:159:23: error: passing argument 1 of ‘searchTreeMap’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+         searchTreeMap(tree->current->right, key);
+                       ^~~~
+treemap.c:147:8: note: expected ‘TreeMap * {aka struct TreeMap *}’ but argument is of type ‘TreeNode * {aka struct TreeNode *}’
+ Pair * searchTreeMap(TreeMap * tree, void* key) {
+        ^~~~~~~~~~~~~
+treemap.c:163:16: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+         return tree;
+                ^~~~
+treemap.c:165:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+775e2db
