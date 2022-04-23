@@ -152,7 +152,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
       return actual->pair->value;
     }
     flag=tree->lower_than(actual->pair->key,key);
-    if(flag==1){
+    if(flag==0){
       actual=actual->right;
     }else{
       actual=actual->left;
@@ -217,7 +217,6 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(ban==0)
       return NULL;
     tree->current=aux;
-    printf("%d Hola", *(int*) aux->pair->key);
     return aux->pair->value;
     }
   return NULL;
