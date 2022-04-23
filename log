@@ -1867,3 +1867,9 @@ treemap.c:63:21: error: ‘TreeNode {aka struct TreeNode}’ has no member named
                      ^~
 Compilation failed
 cebfeb1
+Sat Apr 23 17:01:46 UTC 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  11|4
+total_score: 25/70
+b81631c
