@@ -217,7 +217,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(ban==0)
       return NULL;
     tree->current=aux;
-    printf("%d", *(int*) aux->pair->key);
+    printf("%d Hola", *(int*) aux->pair->key);
     return aux->pair->value;
     }
   return NULL;
