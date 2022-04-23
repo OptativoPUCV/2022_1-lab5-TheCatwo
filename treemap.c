@@ -175,7 +175,7 @@ if(tree->lower_than(key,rec->pair->key)==1){
 aux_ub=rec;
 ban=1;
 }
-if(tree->lower_than(rec->key,key)==1){
+if(tree->lower_than(rec->pair->key,key)==1){
 rec=rec->right;
 }else{
 rec=rec->left;
